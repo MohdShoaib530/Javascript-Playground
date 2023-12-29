@@ -34,7 +34,7 @@ Explore directories to find JavaScript files categorized based on topics. Each s
 
 For example, to run a script named `example.js`, use the following command:
 
-``bash
+bash
 node scripts/example.js
 
 Feel free to modify the scripts or create your own. Use this repository as a playground to experiment, learn, and deepen your understanding of JavaScript.
