@@ -24,7 +24,7 @@ The JavaScript-Playground is designed to be an interactive learning space for Ja
 
 Follow these steps to get started with the JavaScript Playground:
 
-1. Clone the repository: `git clone git@github.com:MohdShoaib530/Javascript-Playground.git`
+1. Clone the repository: `git clone https://github.com/MohdShoaib530/Javascript-Playground.git`
 2. Navigate to the project directory: `cd javascript-playground`
 3. Run scripts using your terminal: `node scripts/scriptName.js`
 
@@ -34,7 +34,7 @@ Explore directories to find JavaScript files categorized based on topics. Each s
 
 For example, to run a script named `example.js`, use the following command:
 
-```bash
+``bash
 node scripts/example.js
 
 Feel free to modify the scripts or create your own. Use this repository as a playground to experiment, learn, and deepen your understanding of JavaScript.
