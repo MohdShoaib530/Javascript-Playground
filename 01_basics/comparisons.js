@@ -17,4 +17,3 @@ console.log([] instanceof Object);     // Output: true
 console.log(typeof null);              // Output: object 
 console.log(typeof NaN);               // Output: number 
 console.log(typeof undefined);         // Output: undefined
-
