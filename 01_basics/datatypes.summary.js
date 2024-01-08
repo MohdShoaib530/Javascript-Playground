@@ -58,3 +58,27 @@ console.log(typeof anotherId);
 console.log(typeof outsideTemp);
 
 // https://262.ecma-international.org/5.1/#sec-11.4.3
+
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// stack(primitive) heap(non-primitive)
+
+let name = 'shoaib'
+let name2 = name;
+console.log(name);
+console.log(name2);
+name2 = 'sakib'
+console.log(name);
+console.log(name2);
+
+let user = {
+    name:'shoaib',
+    email:'shoaib@google.com'
+}
+
+let user2 = user;
+user2.name = 'sakib';
+console.log(user);
+console.log(user2);
+
+
