@@ -9,23 +9,23 @@ const user = {
 
 }
 
+user.welcomeMessage()
+user.username = "sam"
 // user.welcomeMessage()
-// user.username = "sam"
-// user.welcomeMessage()
 
-// console.log(this);
+console.log(this);
 
-// function chai(){
-//     let username = "shoaib"
-//     console.log(this.username);
-// }
+function chai(){
+    let username = "shoaib"
+    console.log(this.username);
+}
 
-// chai()
+chai()
 
-// const chai = function () {
-//     let username = "shoaib"
-//     console.log(this.username);
-// }
+const chai = function () {
+    let username = "shoaib"
+    console.log(this.username);
+}
 
 const chai =  () => {
     let username = "shoaib"
@@ -33,7 +33,7 @@ const chai =  () => {
 }
 
 
-// chai()
+chai()
 
 // const addTwo = (num1, num2) => {
 //     return num1 + num2

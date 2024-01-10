@@ -7,6 +7,7 @@
 })();
 
 ( (name) => {
-    console.log(`DB CONNECTED TWO ${name}`);
+    console.log(`hello db is connected successfully ${name}`);
 } )('shoaib')
 
+// (() => {})() iife

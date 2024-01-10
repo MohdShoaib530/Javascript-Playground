@@ -8,23 +8,23 @@ function sayMyName(){
     console.log("b");
 }
 
-// sayMyName()
+sayMyName()
 
-// function addTwoNumbers(number1, number2){
+function addTwoNumber(number1, number2){
 
-//     console.log(number1 + number2);
-// }
+    console.log(number1 + number2);
+}
 
 function addTwoNumbers(number1, number2){
 
-    // let result = number1 + number2
-    // return result
-    return number1 + number2
+    let result = number1 + number2
+    return result
+    return number1 + number2  //this code is unreachable
 }
 
 const result = addTwoNumbers(3, 5)
 
-// console.log("Result: ", result);
+console.log("Result: ", result);
 
 
 function loginUserMessage(username = "sam"){
@@ -35,15 +35,15 @@ function loginUserMessage(username = "sam"){
     return `${username} just logged in`
 }
 
-// console.log(loginUserMessage("hitesh"))
-// console.log(loginUserMessage("hitesh"))
+console.log(loginUserMessage("shoaib"))
 
 
 function calculateCartPrice(val1, val2, ...num1){
+    console.log(val1,val2);
     return num1
 }
 
-// console.log(calculateCartPrice(200, 400, 500, 2000))
+console.log(calculateCartPrice(200, 400, 500, 2000,3,3,4,5,7))
 
 const user = {
     username: "shoaib",
