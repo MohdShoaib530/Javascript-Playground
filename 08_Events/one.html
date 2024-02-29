@@ -48,17 +48,34 @@
     // }, false)
    
     
-    document.querySelector('#images').addEventListener('click', function(e){
-        console.log(e.target.tagName);
-        if (e.target.tagName === 'IMG') {
-            console.log(e.target.id);
-            let removeIt = e.target.parentNode
-            removeIt.remove()
-        }
+    // document.querySelector('#images').addEventListener('click', function(e){
+    //     console.log(e.target.tagName);
+    //     if (e.target.tagName === 'IMG') {
+    //         console.log(e.target.id);
+    //         let removeIt = e.target.parentNode
+    //         removeIt.remove()
+    //     }
     
         
-    })
+    // })
     
     //removeIt.parentNode.removeChild(removeIt)
+
+    const owl = document.getElementById('owl')
+    owl.addEventListener("click",(e) => {
+        console.log('event',e);
+    })
+    document.addEventListener('keydown', function(event) {
+    if (event.altKey) {
+      // Alt key is pressed
+      document.querySelector('body').style.backgroundColor = 'black'
+    } else if(event.shiftKey) {
+        document.querySelector('body').style.backgroundColor = 'green'
+
+    }
+});
+
+
+    
 </script>
 </html>
