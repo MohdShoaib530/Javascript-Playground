@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttprequest</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const url = "https://api.github.com/users/MohdShoaib530"
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET",url );
+    console.log('hi');
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(this.readyState === 4){
+            const data = this.responseText;
+            console.log(JSON.parse(data).bio);
+        }
+    }
+
+    xhr.send();
+
+</script>
+</html>
