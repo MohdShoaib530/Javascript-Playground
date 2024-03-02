@@ -1,12 +1,12 @@
-function fetchData(){
-    return new Promise((reslove, rejet) => {
+/* function fetchData(){
+    return new Promise((reslove, reject) => {
         setTimeout(() => {
             console.log('shoaib');
             const data = {message: 'Data fetched successfully'};
             // sumulate a successful response
             reslove(data);
             // simulate an error
-            rejet(data);
+            reject(data);
             //reject(new Error('failed to fetch data));
         },4000);
     });
@@ -21,10 +21,10 @@ fetchData()
 .catch(error => {
     console.error(error.message); // Handle errors here
   });
-console.log('end');     
+console.log('end');   */   
 
 
-
+/* 
 function createPromise(){
     return new Promise(function exed(resolve,reject){
         setTimeout(function f(){
@@ -48,7 +48,7 @@ x.catch(function g(value){
 console.log('end');
 for(let i = 0; i < 100000000; i++){
 
-}
+} */
 
 
 function createPromisse(){
@@ -58,7 +58,7 @@ function createPromisse(){
             const data = {message:'Timer has completed'};
             ressolve(data);
             reject(data);
-        },4000)
+        },5000)
     })
 };
 
@@ -66,6 +66,8 @@ async function consume(){
     try{
         console.log('Inside function');
         const response = await createPromisse();
+        console.log('hi');
+        fetch(uu)
         const response1 = await createPromisse();
         console.log('response is',response.message);
         console.log('response is',response1);
@@ -74,4 +76,6 @@ async function consume(){
         console.log('handeled',error);
     }
 };
+console.log('start');
 consume(); 
+console.log('end');
