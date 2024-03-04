@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <button onclick="hello('shoaib')">click</button> -->
+  </body>
+  <script>
+    // function hello(name){
+    //    this.name = name;
+    //     console.log(this);
+    // }
+
+    //  function User(username, loginCount, isLoggedIn){
+    //     this.username = username;
+    //     this.loginCount = loginCount;
+    //     this.isLoggedIn = isLoggedIn
+
+    //     this.greeting = function(){
+    //         console.log(`Welcome ${this.username}`);
+
+    //     }
+
+    //     return this
+    // }
+
+    // console.log(userOne);
+    // console.log(userOne.greeting());
+
+    // console.log(userOne.constructor);
+    // const userTwo = new User("ChaiAurCode", 11, false)
+    // console.log(userTwo);
+
+    // function multiplyby5(num){
+    //     return num * 5;
+    // }
+
+    // multiplyby5.power = 2;
+
+    // console.log('mul',multiplyby5.prototype);
+
+    // function multiplyby5(num){
+    //     this.num = num;
+    //     return this
+    // }
+
+    // console.log(multiplyby5(5));
+
+    // function createUser(username,score){
+    //     this.username = username;
+    //     this.score = score
+    //     return this
+    // };
+
+    // createUser.prototype.increment = function(){
+    //     this.score++;
+    // };
+
+    // createUser.prototype.printMe = function(){
+    //     console.log(`score is ${thi.score}`);
+    // }
+
+    // const chai =  createUser('chai', 100);
+    // const tea =  new createUser('tea', 200);
+    // console.log('tea',chai);
+
+    //  let user = ['shoaib']
+    //  console.log(user);
+
+    let myHeroes = ["ironMan", "spiderMan", "batMan"];
+
+    let heroPower = {
+      ironMan: "jarvis",
+      spiderMan: "spider sense",
+      batMan: "money",
+
+      ironManPower: function () {
+        console.log(`I am ironman and I have ${this.ironMan} power`);
+      },
+    };
+
+    // this bestHero method is available for all in the code
+    Object.prototype.bestHero = function () {
+      console.log(`This is object proto which is good`);
+      return this;
+    };
+    //console.log("myHeroes", myHeroes.bestHero()); // available for all
+    //console.log("heroPower", heroPower.bestHero()); // available for all
+
+    // this bestHero method is available for all arrays in the code
+    Array.prototype.trueLength = function () {
+      console.log(`this is a true lengthof array ${this.length}`);
+    };
+    // myHeroes.trueLength();
+    // heroPower.trueLength(); // not available for object
+
+    const user = {
+      name: "shoaib",
+      email: "shoaib@gmal.com",
+    };
+
+    const teacher = {
+      makeVideos: true,
+    };
+
+    const teachingSupport = {
+      isAvialable: false,
+    };
+
+    const TAsupport = {
+      makeAssignment: "for js",
+      isFullTime: true,
+      __prot0__: teachingSupport,
+    };
+
+    teacher.__prot0__ = user;
+
+    // moder syntax
+    Object.setPrototypeOf(teacher, user);
+
+    let myName = "shoaib";
+
+    // this method is only available for string
+    String.prototype.sayHi = function () {
+      console.log(`Hello ${this} nice to meet you`);
+    };
+    myName.sayHi();
+    console.log(myName);
+    "sakib".sayHi();
+  </script>
+</html>
