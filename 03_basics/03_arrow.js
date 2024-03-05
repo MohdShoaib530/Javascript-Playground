@@ -15,17 +15,18 @@ user.username = "sam"
 
 console.log(this);
 
-function chai(){
-    let username = "shoaib"
-    console.log(this.username);
-}
+// function chai(){
+//     const username = "shoaib"
+//     console.log(this.username);
+//     console.log(this);
+// }
 
-chai()
+// chai()
 
-const chai = function () {
-    let username = "shoaib"
-    console.log(this.username);
-}
+// const chai = function () {
+//     let username = "shoaib"
+//     console.log(this.username);
+// }
 
 const chai =  () => {
     let username = "shoaib"
