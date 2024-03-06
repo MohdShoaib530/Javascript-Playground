@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const user = {
+    name: 'mohd shoaib',
+    email: 'mohd@gmail.com',
+    password: '12121',
+
+    details: function(){
+        console.log(`${name} details are here`);
+    }
+};
+
+// console.log(user);
+// console.log(Object.getOwnPropertyDescriptor(user,'name'));
+
+Object.defineProperty(user,'name', {
+    writable:false,
+    enumerable: false,
+    configurable: false
+});
+
+user.name = 'sakib'
+console.log(user);
+</script>
+</html>
