@@ -34,28 +34,28 @@ const student1 = new Student('mohd','mohd@gmail.com','20') //as you will call th
 
 // blueprinting mechanism using older ways 
 
-function Product(name,price,rating){
-    this.name = name;
-    this.price = price;
-    this.rating = rating
-}
+// function Product(name,price,rating){
+//     this.name = name;
+//     this.price = price;
+//     this.rating = rating
+// }
 
-const product1 = new Product('alchemist','299','4.9');
+// const product1 = new Product('alchemist','299','4.9');
 // console.log(product1);
 
-let x = {
-    p: Product
-}
+// let x = {
+//     p: Product
+// }
 
-let laptop = new x.p('laptop','40000','4.5')  // this points to calling context
+// let laptop = new x.p('laptop','40000','4.5')  // this points to calling context
 // console.log(laptop);
 // console.log(x);
 
-const Products = (name,price,rating) => {
-    this.name = name;
-    this.price = price;
-    this.rating =  rating
-}
+// const Products = (name,price,rating) => {
+//     this.name = name;
+//     this.price = price;
+//     this.rating =  rating
+// }
 
 // const p1 = new Products('iphone','10000',5);
 // console.log('p1',p1); // you will see a typeErro 
@@ -67,12 +67,12 @@ const Products = (name,price,rating) => {
 
 // arrow();
 
-let obj = {
-    x: 10,
-    function (){
-        console.log(this.x);
-    }
-}
+// let obj = {
+//     x: 10,
+//     function (){
+//         console.log(this.x);
+//     }
+// }
 
 // obj.function()
 
@@ -98,6 +98,29 @@ let obj = {
 // }
 // obj.function()
 
+class Product {
+    #rating
+    constructor(name,price,rating) {
+        this.name = name,
+        this.price = price,
+        this.#rating = rating
+    }
+
+    static custom () {
+        console.log('calling a static method');
+    }
+
+    display() {
+        console.log(`displaying the current name ${this.name} and rating ${this.#rating}`);
+    }
+}
+
+const p1 = new Product('laptop','24424', 5)
+console.log(p1);
+console.log(p1.name);
+// console.log(p1.#rating); // Property '#rating' is not accessible outside class 'Product' because it has a private
+// console.log(p1.custom()); // custom can not be accessed outsed that class, because this is static method
+console.log(Product.custom());
 
 
 
