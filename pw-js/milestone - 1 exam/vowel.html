@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Vowel Counter</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        #box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        label{
+            font-weight: 600;
+            font-size: larger;
+        }
+        input{
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px;
+           font-size: 20px; 
+        }
+        button {
+            padding: 7px 20px;
+            border-radius: 10px;
+            background-color: green;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <label for="nameInput">Enter Your Name</label>
+        <input type="text" name="" id="nameInput">
+        <button id="vowelCountButton">Get Vowels</button>
+        <p id="result"></p>
+    </div>
+    
+
+    <!-- javascript code goes here -->
+
+    <script>
+       let nameInput = document.getElementById("nameInput");
+let vowelCountButton = document.getElementById("vowelCountButton");
+let result = document.getElementById("result");
+
+vowelCountButton.addEventListener("click", () => {
+    let nameInputValue = nameInput.value;
+    let count = 0; // Initialize the count to 0
+    for (let i = 0; i < nameInputValue.length; i++) {
+        let character = nameInputValue[i].toLowerCase(); // Convert the character to lowercase for case-insensitive check
+        if (character == 'a' || character == 'e' || character == 'i' || character == 'o' || character == 'u') {
+            count++; // Increment the count for each vowel found
+        }
+    }
+    result.innerText = `Number of vowels: ${count}`;
+});
+
+    </script> 
+</body>
+</html>

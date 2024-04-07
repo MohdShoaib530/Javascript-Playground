@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Application</title>
+    <!-- css codes -->
+
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-image: linear-gradient(to bottom, #ffd21f, #f97924);
+     }
+        #bank {
+            border: 2px solid black;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px;
+        }
+        #operator {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        button{
+            padding: 6px 10px;
+
+            background-color: rgb(5, 176, 5);
+            border-radius: 5px;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bank Of Bharosa</h1>
+    <div id="bank">
+      <h3>Customer Deatails</h3>
+      
+      <label for="">Withdraw/Deposite:</label>
+      <select name="" id="operator">
+        <option value="withdraw">Withdraw</option>
+        <option value="deposit">Deposite</option>
+      </select>
+      <br>
+      <label for="name">Account Holder Name:</label>
+      <input type="text" name="" id="name">
+      <br>
+      <br>
+      <label for="amount">Enter Amount: </label>
+      <input type="number" name="" id="amount">
+      <br>
+      <button id="checkBalance">Press</button>
+      <p id="balance">
+
+      </p>
+    </div>
+
+    <!-- javscript code -->
+    <script>
+        const balance = document.getElementById("balance")
+        const operator = document.getElementById("operator")
+        const nameOf = document.getElementById("name");
+        const inputAmount = document.getElementById("amount");
+        const button = document.getElementById("checkBalance");
+
+        let earlyAmount = Math.floor(Math.random() * 10000);
+
+        button.addEventListener("click", () => {
+           const amount = parseFloat(inputAmount.value);
+           const name = nameOf.value;
+
+           switch(operator.value){
+            case "withdraw":
+              earlyAmount -= amount;
+               break;
+            case "deposit":
+                earlyAmount += amount; 
+                break;
+           }
+           const ledger = {
+        Name: `${name}`,
+        Total: `${earlyAmount}`
+    };
+
+    balance.textContent = `Name: ${ledger.Name}, Total Balnce: ${ledger.Total}`;
+        } )
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: green;padding: 10px 30px;
+    border-radius: 20px;
+}
+.mouse {
+    color: yellow;
+}

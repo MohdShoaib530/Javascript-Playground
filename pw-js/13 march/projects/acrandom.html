@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="inputNumber" placeholder="eg. 1,2,3,4,5">
+    <button id="button">Access</button>
+    <p>First,Second and Last Numbers</p>
+    <ul id="result"></ul>
+
+    <script>
+        const result = document.getElementById('result');
+        const button = document.getElementById('button');
+
+        button.addEventListener('click', () => {
+            const inputNumber = document.getElementById('inputNumber');
+            const inputvalue = inputNumber.value.split(',').map(el => parseInt(el.trim()));
+            random(inputvalue);
+        });
+
+        function random(nums) {
+            const [first, second, ...rest] = nums;
+            const numbers = [first, second,rest.reverse()[0]];
+            
+            result.innerHTML = ''; // Clear previous results
+
+            numbers.forEach(el => {
+                const li = document.createElement('li');
+                li.textContent = el;
+                result.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

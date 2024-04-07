@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter and Capitalize Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #container {
+            margin: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Filter and Capitalize Books</h1>
+        <label for="bookInput">Enter books (title, author, year):</label>
+        <input type="text" id="bookInput">
+        <button id="addButton">Add Book</button>
+        <button id="filterButton">Filter Books</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const books = [];
+
+        const addButton = document.getElementById("addButton");
+        const filterButton = document.getElementById("filterButton");
+        const bookInput = document.getElementById("bookInput");
+        const result = document.getElementById("result");
+
+        addButton.addEventListener("click", () => {
+            const bookInfo = bookInput.value.trim();
+            if (bookInfo) {
+                const [title, author, year] = bookInfo.split(",");
+                books.push({ title, author, year: parseInt(year) });
+                bookInput.value = "";
+            }
+        });
+
+        filterButton.addEventListener("click", () => {
+            const filteredBooks = books.filter(book => book.year > 2010);
+            const capitalizedBooks = filteredBooks.map(book => {
+                return {
+                    title: book.title,
+                    author: book.author
+                        .split(" ")
+                        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                        .join(" "),
+                    year: book.year
+                };
+            });
+
+            if (capitalizedBooks.length === 0) {
+                result.innerHTML = "<p>No books published after 2010.</p>";
+            } else {
+                result.innerHTML = "<p>Books published after 2010 with capitalized author names:</p>";
+                capitalizedBooks.forEach(book => {
+                    result.innerHTML += `<p>${book.title} by ${book.author} (${book.year})</p>`;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

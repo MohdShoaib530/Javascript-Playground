@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background Color Change</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: 700;
+            border: none;
+            border-radius: 10px;
+            background-color: #FDA169;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="change">Click To ColorChange</button>
+    <!-- javscript code goes here -->
+    <script>
+        const numbers = "0123456789ABCDEF";
+        const hash = '#';
+        
+        const button = document.body.addEventListener("click", () => {
+            let num = "";
+            for (let i = 0; i <6; i++){
+               num += numbers[Math.floor(Math.random() * 16)]
+            }
+
+            let hex = hash + num;
+            document.body.style.backgroundColor = hex;
+        })
+
+    </script>
+</body>
+</html>

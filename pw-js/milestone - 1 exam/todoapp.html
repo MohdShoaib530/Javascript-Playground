@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App</title>
+    <!-- css -->
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            flex-direction: column;
+    }
+    
+    
+    button {
+        background-color: rgb(6, 152, 6);
+        padding: 4px 9px;
+        color: white;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 20px;
+    }
+    ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+
+    }
+    </style>
+</head>
+<body>
+    <ul id="list"></ul>
+    <button id="add">Add List</button>
+   
+
+    <!-- javascript code -->
+    <script>
+        const list = document.getElementById("list");
+        const button = document.getElementById("add").addEventListener("click", () => {
+           let li = document.createElement("input");
+           li.style.marginBottom = "10px"
+           list.appendChild(li);
+           
+       })
+    </script>
+</body>
+</html>

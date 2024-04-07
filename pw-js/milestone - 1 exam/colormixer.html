@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixer</title>
+    <!-- linking css -->
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      h1 {
+        box-shadow: 4px 4px 10px black;
+        font-size: 30px;
+      }
+      label {
+        font-weight: 700;
+      }
+      input {
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        font-size: 20px;
+      }
+      
+    #colorMixer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 300px;
+        min-height: 300px;
+        border: 2px solid black;
+        box-shadow: 4px 4px 10px black;
+    }
+    button {
+        background-color:rgb(10, 121, 10);
+        font-size: 25px;
+        padding: 5px 15px;
+        border-radius: 15px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Color Mixer</h1>
+    <div id="colorMixer">
+        <label for="firstColor">Color 1 :</label>
+        <br>
+        <input type="text" name="" id="firstColor" placeholder="Enter Color 1"></label>
+        <br>
+        <label for="secondColor">Color 2 :</label>
+        <br>
+        <input type="text" name="" id="secondColor" placeholder="Enter Color 2">
+        <br>
+        <button id="mixColor" >Mix Color </button>
+        <p id="result"></p>
+        
+    </div>
+
+    <!-- javascript -->
+
+    <script>
+        const firstColor = document.getElementById("firstColor");
+        const secondColor = document.getElementById("secondColor");
+        const mixColor = document.getElementById("mixColor");
+        mixColor.addEventListener("click", colorMixing);
+
+        function colorMixing() {
+            let color1 = firstColor.value.toLowerCase();
+            let color2 = secondColor.value.toLowerCase();
+            let resultColor = '';
+            
+            switch (true) {
+                case (color1 === 'red' && color2 === 'blue') || (color1 === 'blue' && color2 === 'red'):
+                    resultColor = 'purple';
+                    break;
+                case (color1 === 'red' && color2 === 'yellow') || (color1 === 'yellow' && color2 === 'red'):
+                    resultColor = 'orange';
+                    break;
+                case (color1 === 'blue' && color2 === 'yellow') || (color1 === 'yellow' && color2 === 'blue'):
+                    resultColor = 'green';
+                    break;
+                default:
+                    resultColor = 'Invalid color combination';
+            }
+
+            const result = document.getElementById("result");
+            result.textContent = `Resulting Color : ${resultColor}`;
+        }
+    </script>
+</body>
+</html>

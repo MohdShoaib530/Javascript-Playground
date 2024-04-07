@@ -1,0 +1,19 @@
+{
+  "name": "instagram",
+  "version": "1.0.0",
+  "description": "This is a socia media app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "j"
+  },
+  "keywords": [
+    "social",
+    "media"
+  ],
+  "author": "Md Shoaib",
+  "license": "ISC"
+}

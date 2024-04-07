@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript DOM part-2</title>
+</head>
+<body>
+    <!-- Remove child -->
+
+    <ul>
+        <li>one</li>
+        <li>Two</li>
+        <li>Three</li>
+    </ul>
+
+    <script>
+        // Append child
+
+        let title = document.createElement("h1");
+        title.className = "mohd shoaib";
+        title.style.fontSize = "24px";
+        title.textContent = "This is Mohd Shoaib and upcoming billionaire";
+        console.log(title);
+        document.body.appendChild(title)
+
+        // Remove child
+
+        let ul = document.querySelector("ul");
+        console.log(ul);
+        let lists = document.querySelectorAll("li");
+        console.log(lists);
+        for(list of lists){
+            ul.removeChild(list)
+        }
+    </script>
+</body>
+</html>

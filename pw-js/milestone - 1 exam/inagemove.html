@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Move The Image</title>
+  <style>
+    #image {
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <img src="https://media.istockphoto.com/id/501242907/photo/beautiful-happy-young-woman-in-nature-looking-away.jpg?s=612x612&w=0&k=20&c=88jOgSFyL1jAT-QDEl2TNzlOU5uJlmNBi1-yHC88thg=" alt="" id="image">
+
+  <!-- javascript code goes here -->
+  <script>
+   
+    const image = document.getElementById("image");
+
+    let poiX = 0;
+    let poiY = 0;
+    const speed = 10;
+
+    document.addEventListener("keydown", (event) => {
+      switch(event.key){
+        case "ArrowUp":
+          poiY -= speed;
+          break;
+
+        case "ArrowDown":
+          poiY += speed;
+          break;
+
+        case "ArrowLeft":
+          poiX -= speed;
+          break;
+
+        case "ArrowRight":
+          poiX += speed;
+          break;
+      }
+      image.style.left = poiX + 'px';
+      image.style.top = poiY + 'px';      
+
+    })
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String</title>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        #containor{
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px;
+            padding: 40px 30px;
+
+        }
+        input{
+            border: 2px solid rgb(28, 114, 28);
+            border-radius: 8px;
+            padding: 5px;
+            font-size: 20px;
+            box-shadow: 5px 5px 10px;
+        }
+        button{
+          margin-top: 30px;
+          padding: 5px 10px;
+          font-size: 20px;
+          background-color: rgb(19, 171, 19);
+          border-radius: 10px;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="containor">
+        <h1>Reversed String</h1>
+        <input type="text" name="" id="inputString">
+        <br>
+        <button id="reverseButton">Reverse</button>
+        <p id="output"></p>
+    </div>
+
+    <!-- javascript code goes here -->
+    <script>
+        const inputString = document.getElementById("inputString");
+        const reverseButton = document.getElementById("reverseButton");
+        const outputResult = document.getElementById("output")
+
+        reverseButton.addEventListener("click", () => {
+            const inputElement = inputString.value;
+            if(inputElement.trim() !== ""){
+                outputResult.textContent = "";
+                setTimeout(function () {
+                   const reverseString = inputElement.split("").reverse().join("");
+                   outputResult.textContent = "Reversed:" + reverseString;
+
+                },2000);
+            }
+            else{
+                outputResult.textContent =  "Please enter a string.";
+            }
+        });
+    </script>
+</body>
+</html>

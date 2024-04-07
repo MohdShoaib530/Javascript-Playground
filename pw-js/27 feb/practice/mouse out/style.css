@@ -1,0 +1,17 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mouseOut {
+    background-color: green;
+    padding: 15px 60px;
+    border: 2px solid black;
+    border-radius: 15px;
+
+}
+p{
+    font-size: 25px;
+}

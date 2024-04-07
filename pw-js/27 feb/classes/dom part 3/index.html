@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM manipulation part 3</title>
+</head>
+<body>
+    <!-- html code goes here -->
+
+    <h1>hello dear friends</h1>
+    <p id="jss"></p>
+    <button onclick="hey()" id="ullu">hola hola</button>
+
+
+    <!-- javascript code goes here -->
+    
+    <script>
+        document.addEventListener("dblclick",hello);
+        function hello(){
+            document.getElementById("jss").innerText = "Namaste my dear friends";
+        }
+        function hey(){
+            document.getElementById("ullu").innerText = "mola mola";
+            document.getElementById("ullu").style.color = "white";
+            document.getElementById("ullu").style.border = "2px black";
+            document.getElementById("ullu").style.backgroundColor = "green";
+            document.getElementById("ullu").style.borderRadius = "15px"
+            document.getElementById("ullu").style.fontSize = "25px"
+            document.getElementById("ullu").style.padding = "12px"
+            
+        }
+    </script>
+
+</body>
+</html>

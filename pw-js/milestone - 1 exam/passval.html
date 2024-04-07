@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Password</title>
+
+    <!-- css -->
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* text-align: center; */
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px;
+            width: 300px;
+            height: 350px;
+        }
+        h2{
+            font-size: 30px;
+        }
+        h3{
+            margin-right: 135px;
+            font-weight: 800;
+            font-size: 20px;
+        }
+        label[for="emai"]{
+            margin-right: 68px;
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        label[for="Password"]{
+            margin-right: 47px;
+            margin-bottom: 5px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+        input{
+            border-radius: 5px;
+            padding: 4px 8px;
+            font-size: 15px;
+        }  
+       .googleLogo{
+        width: 100px;
+        }
+        input[type = submit]{
+            border-radius: 5px;
+            padding: 4px 8px;
+            background-color: green;
+            color: white;
+            font-size: 18px;
+        }  
+    </style>
+</head>
+<body>
+    <form id="loginForm" >
+        <h2>Log in to your account</h2>
+        <img src="./GOOGLE/580b57fcd9996e24bc43c51f.png" alt="" class="googleLogo">
+        <h3>Sign In</h3>
+        <label for="email">Enter Your email:</label>
+        <input type="email" name="" id="email" >
+        <br>
+        <label for="Password">Enter Your Password:</label>
+        <input type="password" name="" id="password">
+        <p id="validationMessage"></p>
+        <input type="submit" value="Submit">
+
+        <!-- javascript -->
+        <script>
+            document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting by default
+
+            const email = document.getElementById("email");
+            const password = document.getElementById("password");
+            const validationMessage = document.getElementById("validationMessage");
+
+
+            // Check email for "@" symbol
+            var emailValue = email.value;
+            if (emailValue.indexOf('@') === -1) {
+                validationMessage.textContent = 'Invalid email or password!';
+                validationMessage.className = 'error';
+                return;
+            }
+
+            // Check password length
+            var passwordValue = password.value;
+            if (passwordValue.length < 8) {
+                validationMessage.textContent = 'Invalid email or password!';
+                validationMessage.className = 'error';
+                return;
+            }
+
+            // If both email and password are valid
+            validationMessage.textContent = 'Valid email and password!';
+            validationMessage.className = 'success';
+        });
+            
+        </script>
+    </form>
+</body>
+</html>

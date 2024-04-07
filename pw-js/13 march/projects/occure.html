@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count Generator</title>
+    <!-- google fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- css codes goes here -->
+
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+        }
+        #box{
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px black;
+            padding: 60px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        label{
+            font-size: 20px;
+            font-weight: 500;
+            margin-right: 130px;
+            margin-bottom: 5px;
+            text-decoration: underline solid rgb(0, 0, 0);
+        }
+        textarea{
+             border: 2px solid black;
+             border-radius: 8px;
+             padding: 3px 6px;
+             font-size: 20px;
+        }
+        button{
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 5px 10px;
+            color: white ;
+            background-color: rgb(31, 138, 31);
+            font-weight: 500;
+            font-size: 17px;
+
+        }
+        button:hover{
+            background-color: #fff;
+            color: black;
+        }
+        #box:hover{
+            padding: 62px 32px;
+        }
+        textarea:hover{
+            padding: 4px 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- creating a box for word count generator -->
+    <main id="box">
+        <h1>Generate Word Occurrences</h1>
+        <label for="inputText"> Your Introduction: </label>
+        <!-- input area for text -->
+        <textarea name="" id="inputText" cols="22" rows="2"></textarea>
+        <br>
+        <!-- button to get the occurences -->
+        <button id="occurrencButton">Get Occurrences</button>
+        <!-- paragraph to show the result of word occurences -->
+        <p id="result"></p>
+    </main>
+
+    <!-- javascript code goes here -->
+    <script>
+        /* adding an event listener on the occurenceButton */
+
+        const occurrencButton = document.getElementById('occurrencButton').addEventListener('click',() => {
+            const inputText = document.getElementById('inputText').value;
+            const mapValue = occurrencFunction(inputText);
+            updateValue(mapValue); 
+        })
+
+        // creating a function to get the word with their occurence values
+
+        function occurrencFunction(str){
+            // an empty Map Object to store the words with their occurences
+
+            const mapObject = new Map();
+ 
+            // Remove punctuation and convert text to lowercase
+            str = str.replace(/[.\/#!$%\^&\*;:{}=\-_`~()]/g, '').toLowerCase();
+
+            const words = str.split(/[\s+,]/);
+
+            words.forEach((e) => {
+                if(mapObject.has(e)){
+                    mapObject.set(e,mapObject.get(e) + 1)
+                }
+                else{
+                    mapObject.set(e,1)
+                }
+            })
+            return mapObject;
+        }
+
+        function updateValue(updating){
+        const result = document.getElementById('result');
+        let output = '<h1>Occurence Vaues:</h1>'
+        updating.forEach((value,key) =>{
+            output += `<p>${key} : ${value}</p>`
+        })
+        result.innerHTML = output;
+        }
+    </script>
+</body>
+</html>

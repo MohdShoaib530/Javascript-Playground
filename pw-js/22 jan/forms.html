@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form demo</title>
+</head>
+<body>
+    <form method="get" target="_blank" action="./login">
+        <fieldset>
+        <legend>User Details !!</legend>
+        <label for="name">Please enter your name :</label>
+        <input type="text" name="username" id="name">
+        <br>
+        <label for="address">Please enter your address :</label>
+        <textarea name="useraddress" id="address" cols="18" rows="2"></textarea>
+        <br>
+        <label for="dob">DOB :</label>
+        <input type="date" name="userdob" id="userdob">
+        <br>
+        <label for="password">Enter your password</label>
+        <input type="password" name="userpassword" id="password">
+        <br>
+        Select Gender: <br>
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="male" value="male">
+        <br>
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="female">
+        Select your favourite mavies: <br>
+        <label for="avengers">Averngers</label>
+        <input type="checkbox" name="avengers" id="avengers" >
+        <br>
+        <label for="loki">Loki</label>
+        <input type="checkbox" name="loki" id="loki">
+        <br>
+        <label for="thor">Thor</label>
+        <input type="checkbox" name="thor" id="thor">
+        <input type="submit">
+        </fieldset>
+        
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Numbers</title>
+</head>
+<body>
+    <p>Input Numbers (comma-separated)</p>
+    <input type="text" id="inputText">
+    <button id="uniqueButton">Unique Numbers</button>
+    <ul id="result">Unique Numbers</ul>
+
+    <script>
+        const uniqueButton = document.getElementById("uniqueButton");
+        uniqueButton.addEventListener('click', updateNumber);
+
+        function updateNumber() {
+            const inputText = document.getElementById("inputText");
+            const inputNumbers = inputText.value.split(',').map(item => parseInt(item.trim()));
+
+            const uniqueNumbers = [...new Set(inputNumbers)];
+
+            const result = document.getElementById("result");
+
+            // Clear previous results
+            result.innerHTML = '';
+
+            uniqueNumbers.forEach((e) => {
+                const li = document.createElement("li");
+                li.textContent = e;
+                result.appendChild(li);
+            });
+
+            // Clear the input field
+           
+        }
+    </script>
+</body>
+</html>

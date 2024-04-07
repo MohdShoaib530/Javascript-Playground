@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Max Numbers</title>
+</head>
+<body>
+    <div id="container">
+        <h1>Find Min And Max Values</h1>
+        <input type="text" name="" id="inputNumber" placeholder="eg. 1,2,3,4">
+        <h3 id="min"></h3>
+        <h3 id="max"></h3>
+        <button id="result">Get Values</button>
+    </div>
+
+    <script>
+        const inputNumber = document.getElementById('inputNumber');
+        const min = document.getElementById('min');
+        const max = document.getElementById('max');
+        const result = document.getElementById('result');
+
+        result.addEventListener('click', () => {
+            const inputValue = inputNumber.value.split(',').map(Number);
+            const minval = Math.min(...inputValue);
+            const maxval = Math.max(...inputValue)
+            
+            
+
+            min.textContent = minval;
+            max.textContent = maxval;
+        })
+    </script>
+</body>
+</html>
