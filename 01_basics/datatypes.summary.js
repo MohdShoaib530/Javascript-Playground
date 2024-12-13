@@ -126,5 +126,11 @@ if (typeof x === "undefined") {
     console.log("kp");
 }
 
+const areEqualInUpperCase = (str1, str2) =>
+    str1.toUpperCase() === str2.toUpperCase();
+const areEqualInLowerCase = (str1, str2) =>
+    str1.toLowerCase() === str2.toLowerCase();
 
+console.log(areEqualInUpperCase("ß", "ss"));; // true; should be false
+areEqualInLowerCase("ı", "I"); // false; should be true
 
